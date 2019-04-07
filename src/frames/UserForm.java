@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 
 public class UserForm {
     private JPanel rootPanel;
+    private JPanel centerPanel;
     private JTextField surName;
     private JTextField patronymic;
     private JTextField name;
@@ -17,18 +18,28 @@ public class UserForm {
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(name.getText()==""||name.getText()==null){
-                    System.out.println(name.getText());
-                    JOptionPane.showMessageDialog(rootPanel,"Введите имя!");
+                if(name.getText().equals("")){
+                    JOptionPane.showMessageDialog(
+                            rootPanel,
+                            "Введите имя!");
                 }
-                if(surName.getText()==""||surName.getText()==null){
-                    JOptionPane.showMessageDialog(rootPanel,"Введите фамилию!");
+                if(surName.getText().equals("")){
+                    JOptionPane.showMessageDialog(
+                            rootPanel,
+                            "Введите фамилию!");
+                }
+                if(patronymic.getText().equals("")){
+                    JOptionPane.showConfirmDialog(
+                            rootPanel,
+                            "Уверены ли Вы в том, что не хотите установить отчество?",
+                            "Уверены ли Вы в том, что не хотите установить отчество?",
+                            JOptionPane.YES_NO_OPTION);
                 }
             }
         });
     }
 
-    public JPanel getRootPanel() {
-        return rootPanel;
+    public JPanel getCenterPanel() {
+        return centerPanel;
     }
 }

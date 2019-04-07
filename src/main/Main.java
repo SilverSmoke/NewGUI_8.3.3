@@ -11,7 +11,7 @@ public class Main {
         JFrame frame = new JFrame();
 
         UserForm form = new UserForm();
-        frame.setContentPane(form.getRootPanel());
+        frame.setContentPane(form.getCenterPanel());
 
         frame.setTitle("GUI Basics");
         frame.setSize(800, 600);
