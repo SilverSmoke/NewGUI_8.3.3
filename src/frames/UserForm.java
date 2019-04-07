@@ -17,10 +17,11 @@ public class UserForm {
         save.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(name.getText()==""){
+                if(name.getText()==""||name.getText()==null){
+                    System.out.println(name.getText());
                     JOptionPane.showMessageDialog(rootPanel,"Введите имя!");
                 }
-                if(surName.getText()==""){
+                if(surName.getText()==""||surName.getText()==null){
                     JOptionPane.showMessageDialog(rootPanel,"Введите фамилию!");
                 }
             }
